@@ -1,0 +1,28 @@
+.menu-burger
+	padding: 10px
+	background: none
+	+hide-text
+	// position: absolute
+	// left: 50%
+	// top: 2px
+	transform: translateX(-50%)
+	display: none
+	+r(991)
+		display: block
+	+xs
+		padding: 0
+	&.is-active 
+		span 
+			&:not(:first-of-type) 
+				margin: 8px 0 0
+	&:hover 
+		span 
+			background-color: darken(#fff, 15%)
+	span 
+		display: block
+		width: 30px
+		height: 3px
+		background-color: #fff
+		transition: margin 0.25s, background-color 0.25s
+		&:not(:first-of-type) 
+			margin: 5px 0 0

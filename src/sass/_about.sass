@@ -1,0 +1,98 @@
+.about
+	padding: 50px 0
+	&__col
+		flex: 1
+		+r(991)
+			max-width: 480px
+			width: 100%
+			flex: auto
+		&:nth-of-type(1)
+			+r(991)
+				margin-bottom: 30px
+		&:nth-of-type(2)
+			padding-left: 100px
+			+r(991)
+				padding-left: 0
+	&__title
+		font-size: 35px
+		font-weight: 700
+		color: #000
+		margin-bottom: 40px
+		+r(991)
+			font-size: 20px
+			margin-bottom: 25px
+		+xs
+			text-align: center
+	&__in
+		@extend %flex
+		&:first-of-type
+			margin-bottom: 20px
+			padding-bottom: 20px
+			border-bottom: 1px solid $GRAY_SECONDARY
+		+xs
+			display: block
+			text-align: center
+	&__pic
+		margin-right: 34px
+		+xs
+			margin-right: 0
+		i
+			border: 1px solid $active_color_scheme
+			border-radius: 50%
+	&__content
+		h3
+			color: #000
+			margin-bottom: 10px
+			+xs
+				margin: 5px 0
+.about__list-item
+	position: relative
+	&:not(:last-child)
+		margin-bottom: 2px
+.about__list-i
+	position: absolute
+	top: 0
+	bottom: 0
+	left: 43px
+	height: 100%
+	width: 1px
+	background: $GRAY_SECONDARY
+.about__list-title
+	cursor: pointer
+	padding: 15px
+	padding-left: 63px
+	font-size: 16px
+	color: #000
+	display: block
+	border: 1px solid $GRAY_SECONDARY
+	position: relative
+	&.is-active
+		&:after
+			display: none
+	&:after,
+	&:before
+		content: ""
+		z-index: 1
+		display: block
+		position: absolute
+		top: 22px
+		left: 14px
+		font-size: 14px
+		width: 12px
+		height: 3px
+		background: $active_color_scheme
+		+tr(all .3s ease)
+	&:after
+		+rotate(90)
+
+
+.about__list-text
+	-webkit-transition: opacity 0.25s ease, visibility 0.25s ease
+	transition: opacity 0.25s ease, visibility 0.25s ease
+	overflow: hidden
+	-webkit-transition: max-height 0.2s ease-out
+	transition: max-height 0.2s ease-out
+	max-height: 0
+	background-color: rgba($GRAY_SECONDARY, 0.2)
+	p
+		padding: 25px

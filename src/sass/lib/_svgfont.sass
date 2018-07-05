@@ -1,0 +1,65 @@
+@font-face
+	font-family: "svgfont"
+	src: url('fonts/svgfont.eot')
+	src: url('fonts/svgfont.eot?#iefix') format('eot'), url('fonts/svgfont.woff') format('woff'), url('fonts/svgfont.woff2') format('woff2'), url('fonts/svgfont.ttf') format('truetype')
+	font-weight: normal
+	font-style: normal
+
+$icon-ardown: "\EA01"
+$icon-close: "\EA02"
+$icon-de: "\EA03"
+$icon-fb: "\EA04"
+$icon-gbr: "\EA05"
+$icon-li: "\EA07"
+$icon-go: "\EA06"
+$icon-message: "\EA09"
+$icon-location: "\EA08"
+$icon-phone: "\EA0A"
+$icon-pi: "\EA0B"
+$icon-us: "\EA0D"
+$icon-tw: "\EA0C"
+$icon-vi: "\EA0E"
+
+
+%icon
+	font-family: "svgfont"
+	font-style: normal
+	font-weight: normal
+	text-rendering: auto
+	speak: none
+	line-height: 1
+	-webkit-font-smoothing: antialiased
+	-moz-osx-font-smoothing: grayscale
+
+.icon, [class^="icon-"], [class*=" icon-"]
+	@extend %icon
+	display: inline-block
+
+.icon-ardown:before
+	content: $icon-ardown
+.icon-close:before
+	content: $icon-close
+.icon-de:before
+	content: $icon-de
+.icon-fb:before
+	content: $icon-fb
+.icon-gbr:before
+	content: $icon-gbr
+.icon-li:before
+	content: $icon-li
+.icon-go:before
+	content: $icon-go
+.icon-message:before
+	content: $icon-message
+.icon-location:before
+	content: $icon-location
+.icon-phone:before
+	content: $icon-phone
+.icon-pi:before
+	content: $icon-pi
+.icon-us:before
+	content: $icon-us
+.icon-tw:before
+	content: $icon-tw
+.icon-vi:before
+	content: $icon-vi

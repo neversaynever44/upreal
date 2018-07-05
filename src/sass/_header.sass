@@ -1,0 +1,53 @@
+.header
+	&__col
+		@extend %bordered
+		+r(991)
+			border: none
+		&:nth-of-type(1)
+			padding: 18px 0
+		&:nth-of-type(2)
+			align-items: center
+			font-size: 13px
+	&__top
+		border-bottom: 1px solid rgba(128,128,128, 0.15)
+		+r(991)
+			position: relative
+			padding: 35px 0 20px 0	
+	&__body
+		padding: 30px 0 40px 0
+	&__bottom
+		background-color: #353f45
+		+r(991)
+			height: 60px
+			line-height: 60px
+			.inner
+				height: 100%
+				position: relative
+				justify-content: center
+				flex-direction: row
+		+sm
+			.inner
+				flex-direction: column
+	&__time
+		padding: 0 16px
+		position: relative
+		+r(991)
+			position: absolute
+			top: 20px
+			left: 0	
+			right: 0	
+			text-align: center
+			margin: auto
+	&__logo
+		+r(991)
+			margin-bottom: 30px
+	&__title
+		+hide-text
+	&__link
+		display: block
+		+s(logo-desk)
+		+sm
+			+s(logo-mob)
+
+
+

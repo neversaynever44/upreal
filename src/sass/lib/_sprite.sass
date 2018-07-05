@@ -1,0 +1,86 @@
+$icons: (0:0)
+$icons: map-merge($icons,(author1: (X: -206px, Y:-63px, W: 62px, H: 62px, TW: 342px, TH: 178px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(author2: (X: -272px, Y:-63px, W: 62px, H: 62px, TW: 342px, TH: 178px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(logo-desk: (X: -206px, Y:0px, W: 136px, H: 59px, TW: 342px, TH: 178px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(logo-mob: (X: 0px, Y:-92px, W: 198px, H: 86px, TW: 342px, TH: 178px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(logo-wh: (X: 0px, Y:0px, W: 202px, H: 88px, TW: 342px, TH: 178px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(time: (X: -206px, Y:-129px, W: 12px, H: 13px, TW: 342px, TH: 178px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(user: (X: -222px, Y:-129px, W: 11px, H: 13px, TW: 342px, TH: 178px, IMG: '../img/icons.png')))
+
+
+// Gets an attribute from the sass map
+@function icon-attr($icon, $attr)
+	$icon: map-get($icons, $icon)
+	@return map-get($icon, $attr)
+
+@mixin sprite($iconName)
+	background-image: url(icon-attr($iconName, IMG))
+	width: icon-attr($iconName, W)
+	height: icon-attr($iconName, H)
+	background-position: icon-attr($iconName, X) icon-attr($iconName, Y)
+@mixin sprite-position($iconName)
+	background-position: icon-attr($iconName, X) icon-attr($iconName, Y)
+@mixin sprite-retina($iconName)
+	background-image: url(icon-attr($iconName, IMG))
+	$width: icon-attr($iconName, W)
+	$height: icon-attr($iconName, H)
+	width: $width/2
+	height: $height/2
+	$x: icon-attr($iconName, X)
+	$y: icon-attr($iconName, Y)
+	background-position: $x/2 $y/2
+	$tw: icon-attr($iconName, TW) 	
+	$th: icon-attr($iconName, TH)
+	background-size: $tw/2 $th/2  	
+
+
+@mixin s($i)
+	+sprite($i)
+@mixin sp($i)
+	+sprite-position($i)
+@mixin sr($i)
+	+sprite-retina($i)	
+
+//
+//.icon-author1
+//	width: 62px
+//	height: 62px
+//	background-image: url('../img/icons.png')
+//	background-position: -206px -63px
+//
+//.icon-author2
+//	width: 62px
+//	height: 62px
+//	background-image: url('../img/icons.png')
+//	background-position: -272px -63px
+//
+//.icon-logo-desk
+//	width: 136px
+//	height: 59px
+//	background-image: url('../img/icons.png')
+//	background-position: -206px 0px
+//
+//.icon-logo-mob
+//	width: 198px
+//	height: 86px
+//	background-image: url('../img/icons.png')
+//	background-position: 0px -92px
+//
+//.icon-logo-wh
+//	width: 202px
+//	height: 88px
+//	background-image: url('../img/icons.png')
+//	background-position: 0px 0px
+//
+//.icon-time
+//	width: 12px
+//	height: 13px
+//	background-image: url('../img/icons.png')
+//	background-position: -206px -129px
+//
+//.icon-user
+//	width: 11px
+//	height: 13px
+//	background-image: url('../img/icons.png')
+//	background-position: -222px -129px
+//

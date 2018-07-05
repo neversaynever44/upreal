@@ -1,0 +1,87 @@
+.nav
+	@extend %flex
+	align-items: center
+	flex: 1
+	&__link
+		display: block
+		padding: 20px 42px
+		text-transform: uppercase
+		font-weight: 700
+		text-decoration: none
+		color: #fff
+		+tr(all .3s ease)
+		position: relative
+		border-top: 3px solid transparent
+		border-bottom: 3px solid transparent
+		+r(1200)
+			padding: 20px
+		&.is-active,
+		&:hover
+			border-top: 3px solid $active_color_scheme
+			border-bottom: 3px solid $active_color_scheme
+			background-color: rgba($active_color_scheme, 0.1)
+		&:after
+			content: ''
+			z-index: 1
+			display: block
+			position: absolute
+			top: 50%
+			transform: translateY(-50%)
+			width: 1px
+			height: 20px
+			right: 0
+			background: rgba(255,255,255, 0.2)
+	&__item
+		position: relative
+		&:last-of-type
+			.nav__link
+				&:after
+					display: none
+		&:hover
+			ul
+				display: block
+	+r(991)
+		display: none
+.dropdown
+	&__list		
+		display: none
+		padding: 20px
+		position: absolute
+		top: 100%
+		z-index: 2
+		background-color: #353f45
+		width: 270px
+		&:before
+			content: ''
+			z-index: 1
+			display: block
+			position: absolute
+			top: 0
+			left: 0
+			right: 0
+			width: 100%
+			height: 3px
+			background-color: $active_color_scheme
+	&__item
+		padding: 14px 0
+		animation: 
+			name: slideInLeft
+			duration: 0.3s
+			timing-function: ease-in-out
+			fill-mode: backwards
+		+tr(all .3s ease)
+		&:first-child
+			padding-top: 0
+		&:last-child
+			padding-bottom: 0
+		&:not(:last-child)
+			border-bottom: 1px solid rgba(255,255,255,0.3)
+		&:hover
+			border-color: $active_color_scheme
+			.dropdown__link
+				color: $active_color_scheme
+	&__link
+		color: #939ba0
+		text-decoration: none	
+		display: block
+		+tr(all .3s ease)

@@ -1,0 +1,237 @@
+.intro
+	position: relative
+	height: 100%
+	+xs
+		padding: 20px 0
+	&__bg
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		object-fit: cover
+		width: 100vw
+		z-index: 0
+		height: 100%	
+	.inner
+		flex-direction: column
+		position: relative
+		padding-bottom: 30px
+		&:before
+			content: ''
+			z-index: 0
+			display: block
+			position: absolute
+			bottom: 0
+			right: 60px
+			width: 414px
+			height: 715px
+			background: url(../img/people.png)center no-repeat
+			background-size: cover
+			+r(991)
+				display: none
+	&__in
+		background: rgba(#000, 0.6)
+		padding: 41px 40px 42px 40px
+		color: #fff
+		margin: 130px 0
+		width: 40%
+		+r(991)
+			margin: 60px 0
+		+sm
+			margin: 30px 0
+			padding: 25px
+		+xs
+			padding: 18px 16px
+			margin: 0 auto 20px
+	&__title
+		color: #fff
+		padding-left: 30px
+		position: relative
+		+xs
+			padding-left: 15px
+		&:before
+			content: ''
+			display: block
+			z-index: 1
+			position: absolute
+			top: 0
+			left: 0
+			width: 3px
+			height: 100%
+			background-color: $active_color_scheme
+		h2
+			font-size: 36px
+			font-weight: 700
+			margin-bottom: 22px
+			+r(1200)
+				font-size: 28px
+			+xs
+				font-size: 16px
+				margin-bottom: 12px
+		p
+			font-weight: 300
+			font-size: 24px
+			+xs
+				font-size: 12px
+	&__form
+		position: relative
+		z-index: 1
+		+xs
+			display: none
+		h2
+			display: inline-block
+			text-align: center
+			background-color: #353f45
+			padding: 25px 30px
+			font-size: 22px
+			font-weight: 700
+			color: #fff
+			+xs
+				display: none
+	&__mobile
+		display: none
+		+xs
+			display: block
+			max-width: 160px
+			width: 100%
+	&__in,
+	&__form
+		+r(991)
+			width: 60%
+		+sm
+			width: 80%
+		+xs
+			width: 100%
+			max-width: 200px
+
+.form
+	background-color: #f0f0f0
+	padding: 22px 28px 30px 30px
+	+r(991)
+		padding: 15px
+	&__row
+		@extend %flex
+		&:not(:last-child)
+			margin-bottom: 25px
+		+r(991)
+			flex-direction: column
+			flex-wrap: wrap
+	&__title
+		color: black
+		font-size: 16px
+		font-weight: 700
+		margin-bottom: 15px
+		span
+			font-weight: 400
+			color: $GRAY
+		+r(991)
+			margin: 10px 0
+	&__col
+		flex: auto
+		width: 100%
+		position: relative
+		&:not(:last-child)
+			margin-right: 30px
+			+r(991)
+				margin-right: 0
+				margin-bottom: 10px
+	&__group
+		position: relative
+	&__controls
+		position: absolute
+		top: 0
+		right: 0
+		@extend %flex
+	&__select
+		&.select-hidden,
+		&.is-hidden
+			display: none	
+			visibility: hidden
+	&__input
+		border: 1px solid #e7e4e4
+		background-color: #ffffff
+		padding: 3px 7px
+		display: block
+		width: 100%
+		max-width: 65px
+		outline: 0
+		font: 400 12px/1 'Lato', Arial, sans-serif
+		&:nth-of-type(1)
+			margin-right: 16px
+	&__l,
+	&__r
+		width: 100%
+	&__l
+		margin-right: 30px
+		+sm
+			margin-right: 0
+.form__col-flex
+	@extend %flex
+	align-items: flex-end
+	+sm
+		flex-direction: column
+.form__title-pdr
+	padding-right: 146px
+
+.arrow
+	position: absolute
+	top: 2px
+	right: 2px
+	bottom: 2px
+	padding: 8px 11px
+	points-events: none
+	height: 90%
+	background-color: $active_color_scheme
+	pointer-events: none
+	+vertical
+	.icon-ardown
+		vertical-align: middle
+		color: #fff
+		font-size: 12px
+
+.form__select,
+.select-styled
+	width: 100%
+	color: $GRAY
+	height: 38px
+	padding: 8px 34px 8px 11px
+	background: #fff
+	border: 1px solid #e7e4e4
+	line-height: 38px
+	outline: none
+	font: 400 14px/1 'Lato', sans-serif, Arial
+	-webkit-appearance: none
+	-moz-appearance: none
+	appearance: none
+	cursor: pointer
+	+tr(all .3s ease)
+	background-image: none
+.select-styled
+	@extend %flex
+	align-items: center
+
+.select-options
+	position: absolute
+	top: 100%
+	right: 0
+	left: 0
+	z-index: 22
+	border: 1px solid #e7e4e4
+	background-color: #fcfcfc
+	padding: 17px
+	li
+		padding: 10px 0	
+		color: $GRAY
+		cursor: pointer
+		+tr(all .3s ease)
+		font-size: 14px
+		&:hover
+			color: rgba($GRAY, 0.66)
+		&:first-of-type
+			padding-top: 0
+		&:last-of-type
+			padding-bottom: 0
+		&:not(:last-child)
+			border-bottom: 1px solid rgba(#e7e4e4, 0.5)
+		+tr(all .3s ease)
